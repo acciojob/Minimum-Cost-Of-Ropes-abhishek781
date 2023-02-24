@@ -1,3 +1,12 @@
+function calculateMinCost() {
+  const input = document.getElementById("rope-lengths").value;
+  const lengths = input.split(",").map(Number);
+
+  const minCost = minCostToConnectRopes(lengths);
+
+  document.getElementById("result").textContent = "Minimum cost: " + minCost;
+}
+
 function minCostToConnectRopes(arr) {
   let heap = [];
   for (let i = 0; i < arr.length; i++) {
@@ -53,4 +62,3 @@ function siftDown(arr, i, n) {
     siftDown(arr, maxIndex, n);
   }
 }
-  
